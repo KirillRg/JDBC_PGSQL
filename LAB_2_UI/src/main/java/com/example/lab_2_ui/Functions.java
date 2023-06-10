@@ -143,6 +143,7 @@ public class Functions {
                     "AS\r\n" +
                     "$$\r\n" +
                     "BEGIN\r\n" +
+                    "EXECUTE 'CREATE USER ' || username || ' WITH PASSWORD ''' || password || ''';';\r\n" +
                     "EXECUTE 'REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM ' || username || ';';\r\n" +
                     "EXECUTE 'REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM ' || username || ';';\r\n" +
                     "EXECUTE 'REVOKE ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public FROM ' || username || ';';\r\n" +
